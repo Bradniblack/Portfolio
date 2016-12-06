@@ -5,7 +5,7 @@
 import java.io._
 import scala.io.Source
 val lines = Source.fromFile("stopwordoutput.txt").getLines.toVector
-val columns = lines.map(_.split("\t"))
+val columns = lines.map(_.split("\t")).filter(_.size == 2) 
 val chunks = columns.map(_(1))
 
 var count = 0
